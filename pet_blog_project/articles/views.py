@@ -4,21 +4,20 @@ from .models import Article, Author
 
 
 def index(request):
-    list_articles = Article.objects.order_by("-creation_date")[:5]
+    list_articles = Article.objects.all()
+    list_authors = Author.objects.all()
     context = {
         'list_articles': list_articles,
+        'list_authors': list_authors,
     }
-    return render(request, 'articles/index.html', context)
+    return render(request, 'index.html', context)
 
 
 def article(request, id):
     article = get_object_or_404(Article, pk=id)
-    return render(request, 'articles/detail.html', {'article': article})
+    return render(request, 'detail.html', {'article': article})
 
 
-def author(page, id):
-    try:
-        author = Author.objects.get(pk=id)
-    except Author.DoesNotExist:
-        raise Http404('Author does not exist')
-    return HttpResponse(request, 'authors/author', {'author': author})
+def author(request, id):
+    author = get_object_or_404(Author, pk=id)
+    return render(request, 'author.html', {'author': author})
