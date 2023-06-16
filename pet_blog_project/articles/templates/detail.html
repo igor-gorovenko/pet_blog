@@ -2,9 +2,13 @@
 {% block title %}{{ article.title }}{% endblock title %}
 {% block content %}
 
-<a href="/">Back</a>
-<h1>{{ article.title }}</h1>
-<h5>{{ article.creation_date }}</h5>
-<p>{{ article.article_text }}</p>
+<div class="card" style="width: 18rem;">
+    <a href="/">Back</a>
+    <div class="card-body">
+        <h5 class="card-title">{{ article.title }}</h5>
+        <p>{{ article.creation_date }}</p>
+        <p class="card-text">{{ article.article_text }}</p>
+    </div>
+</div>
 
 {% endblock content %}

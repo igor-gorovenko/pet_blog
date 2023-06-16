@@ -5,11 +5,19 @@
 {% if list_articles %}
 <ul>
     {% for article in list_articles %}
-    <li>
-        <a href="{% url 'articles:article' article.id %}">
-            {{ article.title }}
-        </a>
-    </li>
+    <div class="card" style="width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title">
+                <a href="{% url 'articles:article' article.id %}">
+                    {{ article.title }}
+                </a>
+                <button type="button" class="btn btn-primary">Primary</button>
+            </h5>
+            <p>{{ article.creation_date }}</p>
+            <p class="card-text">{{ article.article_text }}</p>
+        </div>
+    </div>
+
     {% endfor %}
 </ul>
 {% else %}
