@@ -13,40 +13,23 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
-        <div class="container">
-            <a class="navbar-brand" href="/">Logo</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01"
-                aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarColor01">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">Contacts</a>
-                    </li>
+    <!-- header -->
+    {% include 'header.html' %}
+    <!-- content -->
+    <div class="container">
+        <div class="row">
+            <div class="col-8">
+                {% block content %}
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">About</a>
-                    </li>
-                </ul>
-                <button class="btn btn-secondary my-2 my-sm-0" type="submit">Log in</button>
+                {% endblock content %}
+            </div>
+            <div class="col-4">
+                {% include 'sidebar.html' %}
             </div>
         </div>
-    </nav>
-    <div class="container">
-        <div class="col">
-            {% block content %}
-
-            {% endblock content %}
-        </div>
-        <div class="col">
-            <p>navbar</p>
-        </div>
-
     </div>
-
-    <div>Footer</div>
+    <!-- footer -->
+    {% include 'footer.html' %}
     <script src="{% static 'bootstrap/js/bootstrap.min.js' %}"></script>
 </body>
 
