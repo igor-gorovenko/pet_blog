@@ -1,13 +1,26 @@
 <div class="p-2">
-    {% if list_authors %}
-    <ul>
-        {% for author in list_authors %}
-        <li>
-            <a href="{% url 'articles:author' author.id %}">
-                {{ author.first_name }} {{ author.last_name }}
-            </a>
-        </li>
-        {% endfor %}
-    </ul>
-    {% endif %}
+    <div>
+        {% if list_articles %}
+        <ul>
+            {% for article in list_articles %}
+            <li>
+                {{ article.tags }}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
+    <div>
+        {% if list_authors %}
+        <ul>
+            {% for author in list_authors %}
+            <li>
+                <a href="{% url 'articles:author' author.id %}">
+                    {{ author.first_name }} {{ author.last_name }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+    </div>
 </div>

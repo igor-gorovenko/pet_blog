@@ -1,6 +1,7 @@
 from django.shortcuts import get_object_or_404, render
+from django.urls import reverse_lazy
 
-from .models import Article, Author
+from .models import Article, Author, Tag
 
 
 def index(request):
