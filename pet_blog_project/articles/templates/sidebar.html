@@ -1,16 +1,5 @@
 <div class="p-2">
     <div>
-        {% if list_articles %}
-        <ul>
-            {% for article in list_articles %}
-            <li>
-                {{ article.tags }}
-            </li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-    </div>
-    <div>
         {% if list_authors %}
         <ul>
             {% for author in list_authors %}

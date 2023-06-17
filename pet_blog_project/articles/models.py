@@ -1,6 +1,3 @@
-import datetime
-from django.urls import reverse
-from django.utils import timezone
 from django.db import models
 
 
@@ -29,11 +26,6 @@ class Article(models.Model):
 
     def __str__(self) -> str:
         return self.title
-    
-    def get_absolute_url(self):
-        return reverse('article-detail', args=[str(self.id)])
-    
-    def was_created_recently(self):
-        return self.creation_date >= timezone.now() - datetime.timedelta(days=1) 
+
 
 
