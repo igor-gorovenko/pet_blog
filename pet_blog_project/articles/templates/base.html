@@ -4,27 +4,29 @@
 <head>
     {% load static %}
     <meta charset="UTF-8">
-    <title>{% block title %}Title{% endblock title %}</title>
+    <title>{% block title %} {% endblock title %}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <!-- INCLUDE CSS -->
     <link href="{% static 'bootstrap/css/bootstrap.min.css' %}" type="text/css" rel="stylesheet">
-
-
 </head>
 
 <body>
     <!-- header -->
     {% include 'header.html' %}
     <!-- content -->
-    <div class="container">
-        <div class="row">
+    <div class="container overflow-hidden">
+        <div class="row g-5">
             <div class="col-8">
-                {% block content %}
+                <div class="p-4">
+                    {% block content %}
 
-                {% endblock content %}
+                    {% endblock content %}
+                </div>
             </div>
             <div class="col-4">
-                {% include 'sidebar.html' %}
+                <div class="p-4">
+                    {% include 'sidebar.html' %}
+                </div>
             </div>
         </div>
     </div>
