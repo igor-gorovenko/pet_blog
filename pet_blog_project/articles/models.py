@@ -1,6 +1,14 @@
 from django.db import models
 
 
+class User(models.Model):
+    first_name = models.CharField(max_length=40)
+    last_name = models.CharField(max_length=40)
+    
+    def __str__(self) -> str:
+        return f'{self.first_name} {self.last_name}'
+
+
 class Author(models.Model):
     first_name = models.CharField(max_length=40)
     last_name = models.CharField(max_length=40)

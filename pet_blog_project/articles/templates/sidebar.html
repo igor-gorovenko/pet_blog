@@ -4,9 +4,19 @@
         <ul>
             {% for author in list_authors %}
             <li>
-                <a href="{% url 'articles:author' author.id %}">
+                <a href="{% url 'author' author.id %}">
                     {{ author.first_name }} {{ author.last_name }}
                 </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        {% if list_tags %}
+        <ul>
+            {% for tag in list_tags %}
+            <li>
+                {{ tag.name }}
             </li>
             {% endfor %}
         </ul>
