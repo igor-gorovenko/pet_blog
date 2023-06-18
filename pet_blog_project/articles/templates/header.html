@@ -7,20 +7,21 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarColor01">
             <ul class="navbar-nav me-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Authors</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Contacts</a>
-                </li>
+                <!-- link menu -->
             </ul>
             <form class="d-flex">
-                <div class="p-1">
-                    <a href="#" class="btn btn-dark">Sign in</a>
+                {% if user.is_authenticated %}
+                <div>
+                    {{ user.get_username }}
+                    <a href="{% url 'logout' %}?next={{request.path}}">logout</a>
                 </div>
+
+                {% else %}
+                <div class="p-1">
+                    <a href="{% url 'login' %}" class="btn btn-dark">Sign in
+                    </a>
+                </div>
+                {% endif %}
             </form>
         </div>
     </div>
