@@ -19,7 +19,7 @@ class Author(models.Model):
 
 
 class Tag(models.Model):
-    name = models.CharField(max_length=40, help_text='Enter a tag')
+    name = models.CharField(max_length=40)
 
     def __str__(self) -> str:
         return self.name
@@ -30,7 +30,7 @@ class Article(models.Model):
     text = models.TextField()
     creation_date = models.DateField(auto_now_add=True)
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True)
-    tags = models.ManyToManyField(Tag, help_text='Select a tag')
+    tags = models.ManyToManyField(Tag)
 
     def __str__(self) -> str:
         return self.title
