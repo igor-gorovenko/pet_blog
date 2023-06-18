@@ -9,5 +9,23 @@
             {% endfor %}
         </ul>
         {% endif %}
+
+        {% if list_tags %}
+        <ul>
+            {% for tag in list_tags %}
+            <li>
+                {{ tag.name }}
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
+
+        <ul>
+            {% for tag in article.tags.all %}
+            <li>
+                {{ tag }}
+            </li>
+            {% endfor %}
+        </ul>
     </div>
 </div>

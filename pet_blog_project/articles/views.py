@@ -25,13 +25,3 @@ def article(request, id):
 def author(request, id):
     author = get_object_or_404(Author, pk=id)
     return render(request, 'author.html', {'author': author})
-
-
-def article_by_tag(request, tag_slug):
-    tag = get_object_or_404(Tag, slug=tag_slug)
-    articles = Article.objects.filter(tags__in=[tag])
-    context = {
-        'articles': articles,
-    }
-
-    return render(request, 'index.html', context)
