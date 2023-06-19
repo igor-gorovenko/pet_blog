@@ -1,18 +1,16 @@
-from django.views.generic import ListView, DetailView
+from django.shortcuts import get_object_or_404, render
 
-from .models import Article, Author, Tag
-
-
-class ArticleListView(ListView):
-    model = Article
-    template_name = 'index.html'
+from .models import Article
 
 
-class ArticleDetailView(DetailView):
-    model = Article
-    template_name = 'article_detail.html'
+def index(request):
+    list_articles = Article.objects.all()
+    context = {
+        'list_articles': list_articles,
+    }
+    return render(request, 'index.html', context)
 
 
-class TagListView(ListView):
-    model = Tag
-    template_name = 'index.html'
+def article(request, id):
+    article = get_object_or_404(Article, pk=id)
+    return render(request, 'detail.html', {'article': article})

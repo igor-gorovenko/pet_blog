@@ -2,13 +2,15 @@
 {% block title %}Main{% endblock title %}
 {% block content %}
 <h1>Articles</h1>
-{% for article in object_list %}
 
+{% for article in list_articles %}
 <div class="p-2">
     <div class="card">
         <div class="card-body">
             <h4>
-                {{ article.title }}
+                <a href="{% url 'detail' article.id %}">
+                    {{ article.title }}
+                </a>
             </h4>
             <h6>
                 {{ article.creation_date }}
@@ -16,13 +18,11 @@
             <p>
                 {{ article.text|truncatewords:24 }}
             </p>
-            <a href="{{ article.get_absolute_url }}">
-                Read more
-            </a>
         </div>
     </div>
 </div>
-
 {% endfor %}
+
+
 
 {% endblock content %}

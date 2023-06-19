@@ -1,11 +1,16 @@
 {% extends 'base.html' %}
-{% block title %}{{ article.title }}{% endblock title %}
+
+{% block title %} {% endblock title %}
+
 {% block content %}
 
 <a href="/">Back</a>
 
 <h1>{{ article.title }}</h1>
 <p>{{ article.creation_date }}</p>
-<p class="card-text">{{ article.text }}</p>
+<p>{{ article.author }}</p>
+<p>{{ article.tags }}</p>
+<p>{{ article.text }}</p>
+
 
 {% endblock content %}

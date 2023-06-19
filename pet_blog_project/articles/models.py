@@ -8,9 +8,6 @@ class Tag(models.Model):
 
     def __str__(self) -> str:
         return self.name
-    
-    def get_absolute_url(self):
-        return reverse('tag', kwargs={'slug': self.slug})
 
 
 class Author(models.Model):
@@ -20,9 +17,6 @@ class Author(models.Model):
 
     def __str__(self) -> str:
         return f'{self.first_name} {self.last_name}'
-
-    def get_absolute_url(self):
-        return reverse('author_detail', args=[str(self.id)])
     
 
 class Article(models.Model):
@@ -34,9 +28,6 @@ class Article(models.Model):
 
     def __str__(self) -> str:
         return self.title
-    
-    def get_absolute_url(self):
-        return reverse('article_detail', args=[str(self.id)])
 
 
 
