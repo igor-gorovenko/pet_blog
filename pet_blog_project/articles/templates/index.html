@@ -1,22 +1,22 @@
 {% extends 'base.html' %}
 {% block title %}Main{% endblock title %}
 {% block content %}
+<h1>Articles</h1>
+{% for article in object_list %}
 
-{% if list_articles %}
-{% for article in list_articles %}
 <div class="p-2">
     <div class="card">
         <div class="card-body">
-            <h4 class="card-title">
+            <h4>
                 {{ article.title }}
             </h4>
-            <h6 class="card-subtitle mb-2 text-muted">
+            <h6>
                 {{ article.creation_date }}
             </h6>
-            <p class="card-text">
+            <p>
                 {{ article.text|truncatewords:24 }}
             </p>
-            <a href="{% url 'article' article.id %}">
+            <a href="{{ article.get_absolute_url }}">
                 Read more
             </a>
         </div>
@@ -24,9 +24,5 @@
 </div>
 
 {% endfor %}
-{% else %}
-<p>No articles...</p>
-{% endif %}
-
 
 {% endblock content %}

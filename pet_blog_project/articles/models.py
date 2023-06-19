@@ -4,10 +4,14 @@ from django.urls import reverse
 
 class Tag(models.Model):
     name = models.CharField(max_length=40)
+    slug = models.SlugField(null=False, unique=True)
 
     def __str__(self) -> str:
         return self.name
     
+    def get_absolute_url(self):
+        return reverse('tag', kwargs={'slug': self.slug})
+
 
 class Author(models.Model):
     first_name = models.CharField(max_length=40)
@@ -17,6 +21,9 @@ class Author(models.Model):
     def __str__(self) -> str:
         return f'{self.first_name} {self.last_name}'
 
+    def get_absolute_url(self):
+        return reverse('author_detail', args=[str(self.id)])
+    
 
 class Article(models.Model):
     title = models.CharField(max_length=120)
@@ -27,6 +34,9 @@ class Article(models.Model):
 
     def __str__(self) -> str:
         return self.title
+    
+    def get_absolute_url(self):
+        return reverse('article_detail', args=[str(self.id)])
 
 
 

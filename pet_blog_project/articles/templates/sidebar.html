@@ -1,24 +1,9 @@
 <div class="p-2">
     <div>
-        {% if list_authors %}
-        <ul>
-            {% for author in list_authors %}
-            <li>
-                {{ author.first_name }} {{ author.last_name }}
-            </li>
-            {% endfor %}
-        </ul>
-        {% endif %}
-
-        {% if list_tags %}
-        <ul>
-            {% for tag in list_tags %}
-            <li>
-                {{ tag.name }}
-            </li>
-            {% endfor %}
-        </ul>
-
-        {% endif %}
+        {% for article in object_list %}
+        <li>
+            {{ article.author }}
+        </li>
+        {% endfor %}
     </div>
 </div>
