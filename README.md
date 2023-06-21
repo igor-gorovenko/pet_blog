@@ -52,4 +52,5 @@ python manage.py runserver
 Переходим на url, вы должны увидеть что то подобное (данные будут отличаться):
 
 Превью проекта
-<img width="1014" alt="Screenshot 2023-06-19 at 15 22 20" src="https://github.com/igor-gorovenko/pet_blog/assets/59226858/79c90f79-a4b3-4a70-b8ad-04e84fb3f4f7">
+
+<img width="1024" alt="Screenshot 2023-06-21 at 14 24 18" src="https://github.com/igor-gorovenko/pet_blog/assets/59226858/796bed31-6906-4050-800c-bc6c99bb9cc3">
