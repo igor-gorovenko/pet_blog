@@ -3,6 +3,7 @@
 {% block content %}
 <h1>Articles</h1>
 
+{% if list_articles %}
 {% for article in list_articles %}
 <div class="p-2">
     <div class="card">
@@ -22,5 +23,9 @@
     </div>
 </div>
 {% endfor %}
+
+{% else %}
+<p>No articles</p>
+{% endif %}
 
 {% endblock content %}
