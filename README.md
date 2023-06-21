@@ -22,7 +22,6 @@ source ./venv/bin/activate
 
 ```
 Django==4.2.2
-Python==3.11.3
 django-seed==0.3.1
 ```
 
