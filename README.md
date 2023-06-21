@@ -37,6 +37,11 @@ python -m pip install <name_packages>
 cd pet_blog_project
 ```
 
+Делаем миграции
+```
+python manage.py migrate
+```
+
 Генерируем данные
 ```
 python manage.py seed articles --number=5
