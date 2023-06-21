@@ -20,7 +20,7 @@ class Author(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length=120)
-    slug = models.SlugField(null=False, unique=True)
+    slug = models.SlugField(null=False, unique=True, db_index=True, verbose_name='URL')
     text = models.TextField()
     creation_date = models.DateField(auto_now_add=True)
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True)
