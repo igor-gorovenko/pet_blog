@@ -1,5 +1,4 @@
 from django.db import models
-from django.urls import reverse
 
 
 class Tag(models.Model):
@@ -21,6 +20,7 @@ class Author(models.Model):
 
 class Article(models.Model):
     title = models.CharField(max_length=120)
+    slug = models.SlugField(null=False, unique=True)
     text = models.TextField()
     creation_date = models.DateField(auto_now_add=True)
     author = models.ForeignKey(Author, on_delete=models.SET_NULL, null=True)

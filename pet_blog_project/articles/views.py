@@ -18,8 +18,8 @@ def index(request):
     return render(request, 'index.html', context)
 
 
-def article(request, id):
-    article = get_object_or_404(Article, pk=id)
+def article(request, art_slug):
+    article = get_object_or_404(Article, slug=art_slug)
     list_tags = article.tags.all()
     context = {
         'article': article,
