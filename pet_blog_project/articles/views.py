@@ -36,7 +36,7 @@ def articles_by_tag(request, tag_slug):
         'list_articles': list_articles,
         'list_tags': list_tags,
     }
-    return render(request, 'tag.html', context)
+    return render(request, 'index.html', context)
 
 
 class SignUp(CreateView):
