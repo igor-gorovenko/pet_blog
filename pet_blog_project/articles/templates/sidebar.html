@@ -1,22 +1,44 @@
 <div class="p-2">
     <div>
+        {% if list_tags %}
         <ul>
+            <h5>Tags</h5>
             {% for tag in list_tags %}
             <li>
-                <a href="{% url 'tag' tag.slug %}">
+                <a href="{% url 'by_tag' tag.slug %}">
                     {{ tag.name }}
                 </a>
             </li>
             {% endfor %}
         </ul>
+        {% endif %}
 
+        {% if list_authors %}
         <ul>
+            <h5>Authors</h5>
             {% for author in list_authors %}
             <li>
-                {{ author }}
+                <a href="{% url 'by_author' author.slug %}">
+                    {{ author }}
+                </a>
+
             </li>
             {% endfor %}
         </ul>
+        {% endif %}
+
+        {% if list_dates %}
+        <ul>
+            <h5>Dates</h5>
+            {% for date in list_dates %}
+            <li>
+                <a href="{% url 'by_date' date.slug %}">
+                    {{ date }}
+                </a>
+            </li>
+            {% endfor %}
+        </ul>
+        {% endif %}
 
     </div>
 </div>
