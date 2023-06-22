@@ -1,6 +1,6 @@
 # Проект pet_blog
 
-<img width="1024" alt="Screenshot 2023-06-21 at 14 24 18" src="https://github.com/igor-gorovenko/pet_blog/assets/59226858/796bed31-6906-4050-800c-bc6c99bb9cc3">
+<img width="984" alt="Screenshot 2023-06-22 at 17 17 08" src="https://github.com/igor-gorovenko/pet_blog/assets/59226858/c9360c24-6ebc-4592-88bd-8de677466808">
 
 Превью проекта
 #
